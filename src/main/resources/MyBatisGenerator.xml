@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="E:/mavenRepo/mysql/mysql-connector-java/8.0.21/mysql-connector-java-8.0.21.jar"/>
+    <context id="productRelease">
+        <property name="mergeable" value="false" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/hjjczz?serverTimezone=GMT%2B8"
+                        userId="root" password="mysql" />
+        <javaModelGenerator targetPackage="com.github.binarywang.demo.wx.mp.entity"
+                            targetProject="src/main/java" />
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources" />
+
+        <javaClientGenerator targetPackage="com.github.binarywang.demo.wx.mp.dao"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+        <table tableName="T_HJCCZZ_FORMSLIST_FIELD" />
+        <!--<table tableName="user_info" />
+       <table tableName="T_HJCCZZ_TABLELIST" /> -->
+
+    </context>
+</generatorConfiguration>

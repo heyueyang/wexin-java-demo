@@ -1,8 +1,8 @@
 package com.github.binarywang.demo.wx.mp.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.fasterxml.jackson.core.JsonGenerator;
+import com.alibaba.fastjson.JSONArray;;
+import com.alibaba.fastjson.JSONObject;
 import com.github.binarywang.demo.wx.mp.builder.TextBuilder;
 import com.github.binarywang.demo.wx.mp.dao.THjcczzTablelistMapper;
 import com.github.binarywang.demo.wx.mp.dao.UserInfoMapper;
@@ -19,8 +19,6 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -85,9 +83,9 @@ public class MsgHandler extends AbstractHandler {
                 return new TextBuilder().build(content, wxMessage, weixinService);
             } else {
                 JSONObject data = new JSONObject();
-                THjcczzTablelistExample example = new THjcczzTablelistExample();
-                example.createCriteria().andIdBetween(1,2);
-                List<THjcczzTablelist> list =  tHjcczzTablelistMapper.selectByExample(example);
+                UserInfoExample example = new UserInfoExample();
+                example.createCriteria().andIdBetween(1L, 2L);
+                List<UserInfo> list =  userInfoMapper.selectByExample(example);
                 log.info("===================================");
                 log.info(list);
                 content = data.toString();

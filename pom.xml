@@ -11,7 +11,7 @@
 
     <groupId>com.github.binarywang</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <artifactId>weixin-java-mp-demo-springboot</artifactId>
+    <artifactId>weixin-java-demo</artifactId>
     <packaging>war</packaging>
 
     <name>Wechat mp demo with Spring Boot and WxJava</name>
@@ -36,8 +36,19 @@
                     <groupId>com.fasterxml.jackson.core</groupId>
                     <artifactId>jackson-databind</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -122,7 +133,7 @@
 
     <build>
         <!-- 最后项目名称，war包名称 -->
-        <finalName>wx</finalName>
+        <finalName>weixin-java-demo</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
@@ -131,6 +142,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
